@@ -446,7 +446,7 @@ button, input, textarea, select { font: inherit; }
 .plan-name { margin-bottom: 10px; }
 .plan-price { margin: 0; font-size: clamp(40px,5vw,56px); font-weight: 600; line-height: 1.07; letter-spacing: -0.28px; }
 .plan-copy { margin: 16px 0 0; }
-.plan-list { display: grid; gap: 12px; margin: 28px 0; }
+.plan-list { display: grid; gap: 12px; margin: 28px 0; list-style: none; padding: 0; }
 .plan-list li { position: relative; padding-left: 18px; font-size: 17px; line-height: 1.47; letter-spacing: -0.374px; }
 .plan-list li::before { content: ""; position: absolute; top: 10px; left: 0; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
 
