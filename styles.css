@@ -191,7 +191,7 @@ button, input, textarea, select { font: inherit; }
    ═══════════════════════════════════════════ */
 
 .gather-scroll { position: relative; margin-top: 54px; }
-.gather-sticky { position: sticky; top: 76px; z-index: 2; }
+.gather-sticky { position: sticky; top: 76px; z-index: 20; }
 .gather-spacer { height: 260vh; }
 
 .scroll-hint {
@@ -422,13 +422,22 @@ button, input, textarea, select { font: inherit; }
 .stack-card p:last-child, .feature-card p:last-child, .audience-card p, .safety-card p { margin-bottom: 0; }
 
 .safety-grid, .feature-grid, .audience-grid, .pricing-grid, .faq-list { display: grid; gap: 18px; }
-.safety-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+.safety-grid { grid-template-columns: repeat(4,minmax(0,1fr)); }
 .safety-card { min-height: 240px; padding: 28px; background: var(--color-dark-surface); }
-.safety-index { display: inline-block; margin-bottom: 22px; color: rgba(255,255,255,0.38); font-size: 14px; line-height: 1.29; letter-spacing: -0.224px; }
+.safety-index { display: inline-block; margin-bottom: 8px; color: rgba(255,255,255,0.38); font-size: 13px; line-height: 1.29; letter-spacing: -0.224px; }
+.safety-icon { display: block; font-size: 28px; margin-bottom: 12px; line-height: 1; }
 .feature-grid { grid-template-columns: repeat(3,minmax(0,1fr)); margin-top: 42px; }
 .feature-card { min-height: 260px; padding: 26px; box-shadow: var(--shadow-card); }
+.feature-icon { font-size: 32px; margin-bottom: 14px; line-height: 1; }
 .audience-grid { grid-template-columns: repeat(4,minmax(0,1fr)); }
-.audience-card { min-height: 220px; padding: 24px; background: var(--color-dark-surface-2); }
+.audience-card { min-height: 220px; padding: 24px; background: var(--color-dark-surface-2); display: flex; flex-direction: column; gap: 16px; }
+.audience-avatar { width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 26px; flex-shrink: 0; }
+.audience-avatar-dev     { background: linear-gradient(135deg, #1e3a5f, #2563eb); }
+.audience-avatar-creator { background: linear-gradient(135deg, #4a1942, #9333ea); }
+.audience-avatar-finance { background: linear-gradient(135deg, #064e3b, #059669); }
+.audience-avatar-daily   { background: linear-gradient(135deg, #422006, #d97706); }
+.audience-body { display: flex; flex-direction: column; gap: 8px; }
+.audience-card h3 { margin: 0; font-size: 20px; font-weight: 600; color: var(--color-white); }
 
 .pricing-shell { min-height: 90vh; }
 .pricing-grid { grid-template-columns: repeat(2,minmax(0,1fr)); margin-top: 42px; }
@@ -455,6 +464,27 @@ button, input, textarea, select { font: inherit; }
 .closing-card { max-width: 860px; margin: 42px auto 0; padding: 42px 32px; background: var(--color-dark-surface); text-align: center; }
 .closing-card img { margin: 0 auto 20px; border-radius: 16px; }
 
+/* ── Tech details expandable ── */
+.tech-details { margin-top: 28px; border-radius: 18px; overflow: hidden; background: var(--color-white); box-shadow: var(--shadow-card); }
+.tech-details summary { padding: 18px 24px; cursor: pointer; list-style: none; font-size: 15px; font-weight: 500; color: var(--color-link); letter-spacing: -0.2px; }
+.tech-details summary::-webkit-details-marker { display: none; }
+.tech-details summary::after { content: " ↓"; opacity: 0.6; }
+.tech-details[open] summary::after { content: " ↑"; }
+.tech-table { width: 100%; border-collapse: collapse; }
+.tech-table td { padding: 12px 24px; font-size: 14px; line-height: 1.4; border-top: 1px solid var(--color-black-faint); }
+.tech-table td:first-child { color: var(--color-black-soft); width: 40%; }
+.tech-table td:last-child { font-weight: 500; }
+
+/* ── App Store badge ── */
+.appstore-badge { display: inline-flex; flex-direction: column; align-items: center; gap: 8px; margin-top: 28px; }
+.appstore-inner { display: inline-flex; align-items: center; gap: 14px; padding: 12px 22px; background: var(--color-black); border-radius: 14px; border: 1px solid rgba(255,255,255,0.12); transition: background 180ms ease; cursor: pointer; }
+.appstore-inner:hover { background: #1a1a1e; }
+.appstore-logo { flex-shrink: 0; }
+.appstore-text { display: flex; flex-direction: column; }
+.appstore-sub { font-size: 11px; color: rgba(255,255,255,0.6); letter-spacing: 0.2px; }
+.appstore-title { font-size: 19px; font-weight: 600; color: var(--color-white); letter-spacing: -0.3px; line-height: 1.2; }
+.appstore-price { font-size: 13px; color: rgba(255,255,255,0.5); }
+
 .site-footer { background: var(--color-gray-100); color: var(--color-black-soft); }
 .footer-shell { max-width: var(--site-width); margin: 0 auto; padding: 24px 28px 40px; display: flex; justify-content: space-between; gap: 20px; font-size: 12px; line-height: 1.33; letter-spacing: -0.12px; }
 
@@ -478,7 +508,7 @@ button, input, textarea, select { font: inherit; }
   .site-nav.is-open { display: flex; }
   .site-nav a { padding: 12px 8px; }
   .nav-shell { position: relative; }
-  .metric-strip, .feature-grid, .pricing-grid, .comparison-strip, .safety-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .metric-strip, .feature-grid, .pricing-grid, .safety-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
   .split-layout { grid-template-columns: 1fr; }
   .section-shell { padding-top: 100px; padding-bottom: 100px; }
   .audience-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
@@ -491,7 +521,7 @@ button, input, textarea, select { font: inherit; }
   .hero-shell { padding-top: 72px; }
   .site-header { padding-left: 10px; padding-right: 10px; }
   .nav-shell, .section-shell, .footer-shell { padding-left: 18px; padding-right: 18px; }
-  .metric-strip, .feature-grid, .pricing-grid, .comparison-strip, .safety-grid, .audience-grid { grid-template-columns: 1fr; }
+  .metric-strip, .feature-grid, .pricing-grid, .safety-grid, .audience-grid { grid-template-columns: 1fr; }
   .screenshot-gallery { grid-template-columns: 1fr; }
   .screenshot-slot:last-child { max-width: 100%; }
   .price-card, .feature-card, .stack-card, .safety-card, .closing-card, .faq-item { padding: 24px 20px; }
