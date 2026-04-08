@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Stark Support — get help, report bugs, or contact us.">
+  <title>Support — Stark</title>
+  <link rel="icon" type="image/png" href="assets/stark-icon.png">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .support-shell {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 100px 28px 80px;
+    }
+    .support-shell h1 {
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 600;
+      letter-spacing: -0.3px;
+      margin: 0 0 8px;
+      color: var(--color-white);
+    }
+    .support-lead {
+      font-size: 17px;
+      color: rgba(255,255,255,0.7);
+      margin: 0 0 48px;
+      line-height: 1.5;
+    }
+    .support-shell h2 {
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: -0.2px;
+      margin: 48px 0 16px;
+      color: var(--color-white);
+    }
+    .contact-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 20px 24px;
+      background: var(--color-dark-surface);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      margin-bottom: 12px;
+      text-decoration: none;
+      transition: background 160ms ease;
+    }
+    .contact-card:hover { background: var(--color-dark-surface-2); }
+    .contact-icon {
+      width: 44px; height: 44px;
+      border-radius: 10px;
+      background: var(--color-blue);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px; flex-shrink: 0;
+    }
+    .contact-body { display: flex; flex-direction: column; gap: 3px; }
+    .contact-label { font-size: 13px; color: rgba(255,255,255,0.5); }
+    .contact-value { font-size: 17px; font-weight: 500; color: var(--color-white); }
+    .faq-list { display: grid; gap: 10px; margin-top: 0; }
+    .faq-item {
+      padding: 20px 24px;
+      background: var(--color-dark-surface);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 14px;
+    }
+    .faq-item summary {
+      cursor: pointer; list-style: none;
+      font-size: 17px; font-weight: 500;
+      color: var(--color-white); line-height: 1.3;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: " ↓"; color: rgba(255,255,255,0.35); font-weight: 400; }
+    .faq-item[open] summary::after { content: " ↑"; }
+    .faq-item p {
+      margin: 12px 0 0;
+      font-size: 16px; line-height: 1.6;
+      color: rgba(255,255,255,0.7);
+    }
+    .faq-item code {
+      background: rgba(255,255,255,0.1);
+      padding: 2px 6px; border-radius: 5px;
+      font-size: 13px;
+    }
+    .steps { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+    .steps li {
+      display: flex; gap: 14px; align-items: flex-start;
+      font-size: 16px; line-height: 1.5;
+      color: rgba(255,255,255,0.75);
+    }
+    .step-num {
+      width: 26px; height: 26px; border-radius: 50%;
+      background: var(--color-blue); color: white;
+      font-size: 13px; font-weight: 600;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 1px;
+    }
+    @media (max-width: 720px) {
+      .support-shell { padding: 80px 16px 60px; }
+    }
+  </style>
+</head>
+<body style="background: var(--color-black);">
+
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="index.html" aria-label="Stark home">
+        <img src="assets/stark-icon.png" alt="" width="28" height="28">
+        <span>Stark</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html#pricing">Pricing</a>
+        <a href="index.html#faq">FAQ</a>
+        <a class="nav-cta" href="index.html#pricing">Get Stark Pro</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="support-shell">
+      <p class="eyebrow" style="margin-bottom:12px;">Help Center</p>
+      <h1>Stark Support</h1>
+      <p class="support-lead">Have a question or ran into an issue? We're here to help.</p>
+
+      <h2>Contact us</h2>
+      <a class="contact-card" href="mailto:ata@kilicov.dev">
+        <div class="contact-icon">✉</div>
+        <div class="contact-body">
+          <span class="contact-label">Email support</span>
+          <span class="contact-value">ata@kilicov.dev</span>
+        </div>
+      </a>
+
+      <h2>Getting started</h2>
+      <ol class="steps">
+        <li>
+          <span class="step-num">1</span>
+          <span>Open Stark and click <strong>Add Folder</strong> in the sidebar to grant access to a folder.</span>
+        </li>
+        <li>
+          <span class="step-num">2</span>
+          <span>Select the folder you want to organize from the file browser.</span>
+        </li>
+        <li>
+          <span class="step-num">3</span>
+          <span>Type a command in the AI panel — for example <em>"organize by date"</em> or <em>"sort by file type"</em>.</span>
+        </li>
+        <li>
+          <span class="step-num">4</span>
+          <span>Review the proposal, approve the moves you want, then click <strong>Apply</strong>.</span>
+        </li>
+        <li>
+          <span class="step-num">5</span>
+          <span>If anything looks wrong, open <strong>History</strong> and hit <strong>Undo</strong>.</span>
+        </li>
+      </ol>
+
+      <h2>Common questions</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Stark says it can't access my folder</summary>
+          <p>Stark requires explicit permission for each folder. Go to <strong>Sidebar → Add Folder</strong> and select the folder in the file picker. macOS will ask you to confirm access. If you previously denied access, go to <strong>System Settings → Privacy & Security → Files and Folders</strong> and re-enable Stark.</p>
+        </details>
+        <details class="faq-item">
+          <summary>The AI command isn't working or gives unexpected results</summary>
+          <p>Try rephrasing your command. Simple, direct instructions work best — e.g. <em>"group by file type"</em> or <em>"move PDFs to Documents"</em>. If the AI pipeline isn't available (requires macOS 26+), Stark falls back to a built-in rule-based organizer. Make sure you're on macOS 26 or later for the full AI experience.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How do I undo an organization?</summary>
+          <p>Open the <strong>History</strong> tab from the toolbar. Every session is listed with a timestamp. Click <strong>Undo</strong> next to any batch to reverse it, or use <strong>Undo to Here</strong> to roll back multiple sessions at once.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Will Stark touch my Git repos or Xcode projects?</summary>
+          <p>No. Stark automatically detects and protects folders containing <code>.git</code>, <code>node_modules</code>, <code>.xcodeproj</code>, <code>Pods</code>, <code>Cargo.toml</code>, <code>package.json</code>, and other project markers. These are excluded from all operations by default.</p>
+        </details>
+        <details class="faq-item">
+          <summary>I bought Stark Pro but it's still showing as Free</summary>
+          <p>Open Stark → go to <strong>Settings</strong> → tap <strong>Restore Purchases</strong>. This syncs your App Store purchase with the app. If the issue persists, make sure you're signed into the same Apple ID used for the purchase and contact us at <a href="mailto:ata@kilicov.dev">ata@kilicov.dev</a>.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How do I set up automatic rules?</summary>
+          <p>Click the <strong>Rules</strong> button in the toolbar to open the Rules window. Tap <strong>+</strong> to add a new rule — choose a trigger (file type, name pattern, or AI content match) and a destination folder. Rules run automatically when you organize a folder. Free users can create 1 rule; Stark Pro unlocks unlimited rules.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can I use Stark in Turkish?</summary>
+          <p>Yes. Stark supports Turkish commands — for example <em>"tarihe göre grupla"</em> or <em>"fotoğrafları ayır"</em>. You can also change the app language to Turkish in <strong>Settings → Language</strong>.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How do I report a bug?</summary>
+          <p>Email us at <a href="mailto:ata@kilicov.dev">ata@kilicov.dev</a> with a description of what happened, your macOS version, and any steps to reproduce the issue. Screenshots are always helpful.</p>
+        </details>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-shell">
+      <div>
+        <p style="margin:0 0 4px; font-weight:500; color: var(--color-gray-900);">Stark</p>
+        <p style="margin:0;">Smart Folder Organizer for macOS</p>
+      </div>
+      <div style="display:flex; gap: 20px; align-items:center; flex-wrap:wrap;">
+        <a href="privacy.html" style="color: var(--color-black-soft);">Privacy Policy</a>
+        <a href="mailto:ata@kilicov.dev" style="color: var(--color-black-soft);">Support</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
