@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Access Granted — Stark</title>
+  <link rel="icon" type="image/png" href="assets/stark-icon.png">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #0a0a0a;
+      color: #00ff41;
+      font-family: "SF Mono", "Fira Code", "Consolas", monospace;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+    .terminal {
+      width: 100%;
+      max-width: 680px;
+      background: #111;
+      border: 1px solid #1a1a1a;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 60px rgba(0,255,65,0.08);
+    }
+    .terminal-bar {
+      background: #1e1e1e;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1px solid #2a2a2a;
+    }
+    .dot { width: 12px; height: 12px; border-radius: 50%; }
+    .dot-r { background: #ff5f57; }
+    .dot-y { background: #febc2e; }
+    .dot-g { background: #28c840; }
+    .terminal-title {
+      flex: 1;
+      text-align: center;
+      font-size: 12px;
+      color: #666;
+    }
+    .terminal-body {
+      padding: 24px;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+    .line { display: block; }
+    .dim { color: #444; }
+    .yellow { color: #febc2e; }
+    .red { color: #ff5f57; }
+    .white { color: #e0e0e0; }
+    .blink {
+      animation: blink 1s step-end infinite;
+      display: inline-block;
+    }
+    @keyframes blink { 50% { opacity: 0; } }
+    .progress {
+      display: inline-block;
+      color: #00ff41;
+    }
+    .hidden { display: none; }
+    .big-warning {
+      margin: 32px 0 16px;
+      padding: 20px;
+      border: 1px solid #ff5f57;
+      border-radius: 8px;
+      background: rgba(255,95,87,0.05);
+    }
+    .big-warning p {
+      font-size: 13px;
+      line-height: 1.8;
+      color: #e0e0e0;
+    }
+    .reveal-msg {
+      margin-top: 28px;
+      padding: 20px;
+      background: rgba(0,255,65,0.04);
+      border: 1px solid #1a3a1a;
+      border-radius: 8px;
+      font-size: 13px;
+      color: #e0e0e0;
+      line-height: 1.8;
+    }
+    .reveal-msg a {
+      color: #00ff41;
+    }
+    .ascii {
+      font-size: 11px;
+      line-height: 1.4;
+      color: #333;
+      margin-bottom: 16px;
+      white-space: pre;
+    }
+    @media (max-width: 480px) {
+      .ascii { display: none; }
+      .terminal-body { padding: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="terminal">
+    <div class="terminal-bar">
+      <span class="dot dot-r"></span>
+      <span class="dot dot-y"></span>
+      <span class="dot dot-g"></span>
+      <span class="terminal-title">elite_hacker_tool_v9.sh — 80×24</span>
+    </div>
+    <div class="terminal-body">
+      <pre class="ascii">
+  ██████╗  ██████╗ ████████╗ ██████╗██╗  ██╗ █████╗
+  ██╔════╝ ██╔═══██╗╚══██╔══╝██╔════╝██║  ██║██╔══██╗
+  ██║  ███╗██║   ██║   ██║   ██║     ███████║███████║
+  ██║   ██║██║   ██║   ██║   ██║     ██╔══██║██╔══██║
+  ╚██████╔╝╚██████╔╝   ██║   ╚██████╗██║  ██║██║  ██║
+   ╚═════╝  ╚═════╝    ╚═╝    ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝</pre>
+
+      <span class="line dim">$ ./scan_target.sh stark-site.vercel.app</span>
+      <span class="line" id="l1" style="margin-top:8px"></span>
+      <span class="line" id="l2"></span>
+      <span class="line" id="l3"></span>
+      <span class="line" id="l4"></span>
+      <span class="line" id="l5"></span>
+      <span class="line" id="l6"></span>
+      <span class="line" id="l7"></span>
+      <span class="line" id="l8"></span>
+
+      <div class="big-warning hidden" id="warning">
+        <p>
+          <span class="red">⚠ SCAN COMPLETE — THREAT LEVEL: ADORABLE</span><br><br>
+          <span class="white">Found: 4 HTML files, 1 CSS file, 1 JS file</span><br>
+          <span class="white">Database: <span class="red">None (it's a static site, bro)</span></span><br>
+          <span class="white">Server-side code: <span class="red">None</span></span><br>
+          <span class="white">WordPress: <span class="red">Absolutely not</span></span><br>
+          <span class="white">Admin panel: <span class="red">index.html says hi</span></span><br>
+          <span class="white">PHP vulnerabilities: <span class="red">No PHP. No server. Nothing.</span></span><br>
+          <span class="white">SQL injection surface: <span class="red">There is no SQL. There is no spoon.</span></span><br>
+          <span class="white">Credentials found: <span class="red">ata@kilicov.dev — it's literally in the footer</span></span><br>
+        </p>
+      </div>
+
+      <div class="reveal-msg hidden" id="reveal">
+        <span class="yellow">// Congratulations. You found a landing page for a Mac file organizer.</span><br><br>
+        This is a <strong style="color:#00ff41">100% static HTML website</strong> hosted on Vercel.<br>
+        There is no backend. No database. No login system. No secrets.<br><br>
+        The most dangerous thing here is probably the CSS animation.<br><br>
+        If you're genuinely a security researcher and found something real,<br>
+        we'd love to hear from you: <a href="mailto:ata@kilicov.dev">ata@kilicov.dev</a><br><br>
+        <span class="dim">Otherwise — maybe try organizing your Downloads folder instead?</span><br>
+        <span class="dim">Stark can help with that: <a href="index.html" style="color:#444">index.html</a></span>
+      </div>
+
+      <span class="blink" id="cursor">█</span>
+    </div>
+  </div>
+
+  <script>
+    const lines = [
+      { id: 'l1', delay: 400,  text: '<span class="yellow">[*]</span> Initializing elite scan...', },
+      { id: 'l2', delay: 900,  text: '<span class="yellow">[*]</span> Looking for /admin ... <span id="p1"></span>' },
+      { id: 'l3', delay: 1600, text: '<span class="yellow">[*]</span> Looking for /wp-login.php ... <span id="p2"></span>' },
+      { id: 'l4', delay: 2300, text: '<span class="yellow">[*]</span> Probing /api/v1/users ... <span id="p3"></span>' },
+      { id: 'l5', delay: 3000, text: '<span class="yellow">[*]</span> Trying SQL injection on search... <span id="p4"></span>' },
+      { id: 'l6', delay: 3700, text: '<span class="yellow">[*]</span> Checking for .env files... <span id="p5"></span>' },
+      { id: 'l7', delay: 4400, text: '<span class="yellow">[*]</span> Attempting directory traversal... <span id="p6"></span>' },
+      { id: 'l8', delay: 5100, text: '<span class="yellow">[*]</span> Running exploit CVE-2024-????? ... <span id="p7"></span>' },
+    ];
+
+    const results = [
+      { id: 'p1', delay: 1400, text: '<span class="red">404</span>' },
+      { id: 'p2', delay: 2100, text: '<span class="red">404 (not even WordPress)</span>' },
+      { id: 'p3', delay: 2800, text: '<span class="red">it\'s HTML. there\'s no API.</span>' },
+      { id: 'p4', delay: 3500, text: '<span class="red">the search is client-side JS</span>' },
+      { id: 'p5', delay: 4200, text: '<span class="red">just index.html in the dark</span>' },
+      { id: 'p6', delay: 4900, text: '<span class="red">bro it\'s static files</span>' },
+      { id: 'p7', delay: 5600, text: '<span class="red">error: target is a folder organizer website</span>' },
+    ];
+
+    lines.forEach(({ id, delay, text }) => {
+      setTimeout(() => {
+        document.getElementById(id).innerHTML = text;
+      }, delay);
+    });
+
+    results.forEach(({ id, delay, text }) => {
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) el.innerHTML = text;
+      }, delay);
+    });
+
+    setTimeout(() => {
+      document.getElementById('warning').classList.remove('hidden');
+    }, 6200);
+
+    setTimeout(() => {
+      document.getElementById('reveal').classList.remove('hidden');
+      document.getElementById('cursor').style.display = 'none';
+    }, 7200);
+  </script>
+</body>
+</html>

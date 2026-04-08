@@ -1,0 +1,32 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/admin",             "destination": "/gotcha", "permanent": false },
+    { "source": "/admin/:path*",      "destination": "/gotcha", "permanent": false },
+    { "source": "/wp-admin",          "destination": "/gotcha", "permanent": false },
+    { "source": "/wp-admin/:path*",   "destination": "/gotcha", "permanent": false },
+    { "source": "/wp-login.php",      "destination": "/gotcha", "permanent": false },
+    { "source": "/login",             "destination": "/gotcha", "permanent": false },
+    { "source": "/dashboard",         "destination": "/gotcha", "permanent": false },
+    { "source": "/.env",              "destination": "/gotcha", "permanent": false },
+    { "source": "/.env.local",        "destination": "/gotcha", "permanent": false },
+    { "source": "/config.php",        "destination": "/gotcha", "permanent": false },
+    { "source": "/api/:path*",        "destination": "/gotcha", "permanent": false },
+    { "source": "/phpmyadmin",        "destination": "/gotcha", "permanent": false },
+    { "source": "/phpmyadmin/:path*", "destination": "/gotcha", "permanent": false },
+    { "source": "/xmlrpc.php",        "destination": "/gotcha", "permanent": false },
+    { "source": "/shell.php",         "destination": "/gotcha", "permanent": false },
+    { "source": "/backup",            "destination": "/gotcha", "permanent": false },
+    { "source": "/db",                "destination": "/gotcha", "permanent": false }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Powered-By",    "value": "vibes and HTML" },
+        { "key": "X-Secret-Panel",  "value": "gotcha.html" }
+      ]
+    }
+  ]
+}
