@@ -93,9 +93,9 @@ function initGather() {
   /* ── Seed random positions for chaos state ── */
   const rng = mulberry32(42); // deterministic so layout doesn't shift on reload
   const chaosPositions = files.map(() => ({
-    x: rng() * 64 + 8,   // 8% – 72% of stage width (safe margins)
-    y: rng() * 52 + 14,  // 14% – 66% of stage height (below menubar, above dock)
-    rot: (rng() - 0.5) * 22, // -11° – +11°
+    x: rng() * 60 + 10,  // 10% – 70% safe horizontal margins
+    y: rng() * 56 + 16,  // 16% – 72% safe vertical (below menubar, clear of bottom)
+    rot: (rng() - 0.5) * 18, // -9° – +9°
   }));
 
   /* ── Folder grid positions (centered) ── */

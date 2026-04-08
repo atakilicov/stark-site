@@ -516,33 +516,48 @@ button, input, textarea, select { font: inherit; }
   .nav-shell { position: relative; }
   .metric-strip, .feature-grid, .pricing-grid, .safety-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
   .split-layout { grid-template-columns: 1fr; }
-  .section-shell { padding-top: 100px; padding-bottom: 100px; }
+  .section-shell { padding-top: 80px; padding-bottom: 80px; }
   .audience-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
   .screenshot-gallery { grid-template-columns: repeat(2,minmax(0,1fr)); }
   .screenshot-slot:last-child { grid-column: 1 / -1; max-width: 50%; margin: 0 auto; }
-  .gather-stage { aspect-ratio: 16 / 9; }
+  .gather-stage { aspect-ratio: 4 / 3; }
+  .gather-spacer { height: 220vh; }
 }
 
 @media (max-width: 720px) {
-  .hero-shell { padding-top: 72px; }
+  .hero-shell { padding-top: 64px; }
   .site-header { padding-left: 10px; padding-right: 10px; }
-  .nav-shell, .section-shell, .footer-shell { padding-left: 18px; padding-right: 18px; }
-  .metric-strip, .feature-grid, .pricing-grid, .safety-grid, .audience-grid { grid-template-columns: 1fr; }
+  .nav-shell, .section-shell, .footer-shell { padding-left: 16px; padding-right: 16px; }
+  .section-shell { padding-top: 64px; padding-bottom: 64px; }
+  .metric-strip { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .feature-grid, .pricing-grid, .safety-grid, .audience-grid { grid-template-columns: 1fr; }
   .screenshot-gallery { grid-template-columns: 1fr; }
   .screenshot-slot:last-child { max-width: 100%; }
-  .price-card, .feature-card, .stack-card, .safety-card, .closing-card, .faq-item { padding: 24px 20px; }
-  .footer-shell { flex-direction: column; }
-  .gather-stage { aspect-ratio: 16 / 9; }
-  .gather-spacer { height: 200vh; }
-  .mac-file { width: 60px; }
-  .mac-file-icon { width: 44px; height: 54px; }
-  .mac-file-icon::before { width: 11px; height: 11px; }
-  .mac-file-icon::after { font-size: 8px; bottom: 4px; }
-  .mac-file-name { max-width: 60px; font-size: 9px; }
-  .mac-folder { width: 68px; }
-  .mac-folder-icon { width: 52px; height: 42px; }
-  .mac-folder-icon::before { width: 20px; height: 8px; top: -7px; }
-  .mac-folder-name { max-width: 68px; font-size: 10px; }
+  .price-card, .feature-card, .stack-card, .safety-card, .closing-card, .faq-item { padding: 22px 18px; }
+  .footer-shell { flex-direction: column; gap: 8px; text-align: center; }
+  .gather-stage { aspect-ratio: 1 / 1; border-radius: 12px; }
+  .gather-spacer { height: 180vh; }
+  .macos-menu-item:not(.is-bold) { display: none; }
+  .mac-file { width: 52px; }
+  .mac-file-icon { width: 38px; height: 46px; }
+  .mac-file-icon::before { width: 10px; height: 10px; }
+  .mac-file-icon::after { font-size: 7px; bottom: 3px; }
+  .mac-file-name { max-width: 52px; font-size: 8px; }
+  .mac-folder { width: 60px; }
+  .mac-folder-icon { width: 46px; height: 38px; }
+  .mac-folder-icon::before { width: 18px; height: 7px; top: -6px; }
+  .mac-folder-name { max-width: 60px; font-size: 9px; }
+}
+
+@media (max-width: 480px) {
+  .metric-strip { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8px; }
+  .metric-strip li { padding: 16px 12px; }
+  .metric-strip strong { font-size: 22px; }
+  .hero-actions { flex-direction: column; align-items: center; }
+  .button { width: 100%; max-width: 280px; justify-content: center; }
+  .gather-stage { aspect-ratio: 3 / 4; }
+  .gather-spacer { height: 160vh; }
+  .safety-grid { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {
