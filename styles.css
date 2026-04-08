@@ -69,9 +69,12 @@ button, input, textarea, select { font: inherit; }
 .site-nav a:hover { text-decoration: underline; }
 .nav-cta {
   display: inline-flex; align-items: center; justify-content: center;
-  min-height: 32px; padding: 6px 14px;
+  min-height: 32px; padding: 7px 16px;
   background: var(--color-blue); border-radius: var(--radius-pill);
+  font-weight: 500; letter-spacing: -0.2px;
+  transition: opacity 180ms ease;
 }
+.nav-cta:hover { opacity: 0.88; }
 .menu-toggle {
   display: none; width: 40px; height: 40px; padding: 0;
   background: transparent; border: 0; color: inherit; cursor: pointer;
@@ -153,7 +156,8 @@ button, input, textarea, select { font: inherit; }
 .hero-copy { max-width: 860px; margin: 0 auto; text-align: center; }
 .eyebrow { margin: 0 0 14px; color: var(--color-link-dark); font-size: 17px; font-weight: 600; line-height: 1.24; letter-spacing: -0.374px; }
 .eyebrow-dark { color: var(--color-link); }
-.hero-copy h1, .section-copy h2, .closing-card h2 { margin: 0; font-size: clamp(40px,7vw,68px); font-weight: 600; line-height: 1.07; letter-spacing: -0.32px; }
+.hero-copy h1, .section-copy h2, .closing-card h2 { margin: 0; font-size: clamp(40px,7vw,68px); font-weight: 600; line-height: 1.12; letter-spacing: -0.32px; }
+.hero-h1-accent { color: var(--color-link-dark); }
 .section-copy h2, .closing-card h2 { font-size: clamp(32px,4.2vw,52px); }
 .hero-subtitle, .section-copy p, .stack-card p, .feature-card p, .price-card p, .faq-item p, .closing-card p, .audience-card p, .safety-card p { font-size: 17px; font-weight: 400; line-height: 1.47; letter-spacing: -0.374px; }
 .hero-subtitle { max-width: 760px; margin: 20px auto 0; color: var(--color-white-muted); }
@@ -164,17 +168,17 @@ button, input, textarea, select { font: inherit; }
 
 .button {
   display: inline-flex; align-items: center; justify-content: center;
-  min-height: 44px; padding: 8px 18px; border-radius: var(--radius-pill);
-  border: 1px solid transparent; font-size: 17px; font-weight: 400; line-height: 1;
-  transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease, transform 180ms ease;
+  min-height: 44px; padding: 10px 22px; border-radius: var(--radius-pill);
+  border: 1px solid transparent; font-size: 17px; font-weight: 500; line-height: 1;
+  letter-spacing: -0.2px;
+  transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease, opacity 180ms ease;
 }
-.button:hover { transform: translateY(-1px); }
-.button-primary { background: var(--color-blue); color: var(--color-white); border-radius: var(--radius-sm); }
-.button-primary:hover { background: #a855f7; }
-.button-outline-light { border-color: rgba(255,255,255,0.75); color: var(--color-white); }
-.button-outline-light:hover { border-color: var(--color-white); text-decoration: underline; }
-.button-outline-dark { border-color: var(--color-link); color: var(--color-link); }
-.button-outline-dark:hover { text-decoration: underline; }
+.button:hover { opacity: 0.88; }
+.button-primary { background: var(--color-blue); color: var(--color-white); }
+.button-outline-light { border-color: rgba(255,255,255,0.45); color: var(--color-white); background: rgba(255,255,255,0.08); }
+.button-outline-light:hover { border-color: rgba(255,255,255,0.65); background: rgba(255,255,255,0.13); }
+.button-outline-dark { border-color: rgba(0,0,0,0.18); color: var(--color-link); background: transparent; }
+.button-outline-dark:hover { border-color: rgba(0,0,0,0.28); background: rgba(109,40,217,0.06); }
 
 /* ── Metric strip ── */
 
@@ -412,7 +416,9 @@ button, input, textarea, select { font: inherit; }
 .split-layout { display: grid; grid-template-columns: minmax(0,1fr) minmax(360px,430px); align-items: center; gap: 44px; min-height: 90vh; }
 .stack-layout { display: grid; gap: 16px; }
 
-.stack-card, .feature-card, .price-card, .audience-card, .safety-card, .closing-card { border-radius: 22px; }
+.stack-card, .feature-card, .price-card, .audience-card, .safety-card, .closing-card { border-radius: 18px; }
+.feature-card, .price-card { border: 1px solid rgba(0,0,0,0.06); }
+.safety-card, .audience-card, .stack-card-dark { border: 1px solid rgba(255,255,255,0.06); }
 .stack-card { padding: 28px; box-shadow: var(--shadow-card); }
 .stack-card-light, .feature-card, .price-card { background: var(--color-white); color: var(--color-gray-900); }
 .stack-card-dark { background: var(--color-dark-surface); color: var(--color-white); box-shadow: none; }
