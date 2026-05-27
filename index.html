@@ -36,24 +36,54 @@
   </header>
 
   <main id="top">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-media" aria-hidden="true">
-        <img src="assets/organize.png" alt="">
+    <section class="hero-section" aria-labelledby="hero-title">
+      <div class="hero-glow-layer" aria-hidden="true">
+        <span class="hero-orb hero-orb-1"></span>
+        <span class="hero-orb hero-orb-2"></span>
+        <span class="hero-orb hero-orb-3"></span>
       </div>
-      <div class="hero-shade" aria-hidden="true"></div>
 
-      <div class="hero-inner">
-        <p class="eyebrow">For macOS</p>
-        <h1 id="hero-title">Stark - Smart Folder Organizer</h1>
-        <p class="hero-copy">One click organizes a folder by Topic, Type, or Date. Rules keep the next mess away. Disk view shows what is eating your space.</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="https://apps.apple.com/tr/app/stark-smart-folder-organizer/id6761735079?mt=12" target="_blank" rel="noreferrer">View on Mac App Store</a>
-          <a class="button button-secondary" href="#demo">Watch the workflow</a>
+      <div class="section-shell hero-shell">
+        <div class="gather-hero-inner reveal">
+          <p class="eyebrow">For macOS</p>
+          <h1 id="hero-title"><span class="hero-h1-accent">Messy Mac?</span><br>Clean it with a click.</h1>
+          <p class="hero-subtitle">One click organizes a folder by Topic, Type, or Date. Rules keep the next mess away. Disk view shows what is eating your space.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="https://apps.apple.com/tr/app/stark-smart-folder-organizer/id6761735079?mt=12" target="_blank" rel="noreferrer">View on Mac App Store</a>
+            <a class="button button-secondary" href="#demo">Watch the workflow</a>
+          </div>
+          <ul class="metric-strip" aria-label="Key product metrics">
+            <li><strong>100%</strong><span>Offline, always</span></li>
+            <li><strong>0</strong><span>Files ever deleted</span></li>
+            <li><strong>10k+</strong><span>Files in under 2 sec</span></li>
+            <li><strong>Full Undo</strong><span>Every move reversible</span></li>
+          </ul>
         </div>
-        <div class="hero-modes" aria-label="Organization modes">
-          <span>Topic</span>
-          <span>Type</span>
-          <span>Date</span>
+
+        <div class="gather-scroll" id="gather-scroll">
+          <div class="gather-sticky">
+            <p class="scroll-hint" data-scroll-hint>You ask. Stark acts. — Scroll to watch</p>
+            <div class="gather-stage" id="gather-stage" aria-hidden="true">
+              <div class="macos-menubar">
+                <div class="macos-menubar-left">
+                  <span class="macos-apple">&#63743;</span>
+                  <span class="macos-menu-item is-bold">Finder</span>
+                  <span class="macos-menu-item">File</span>
+                  <span class="macos-menu-item">Edit</span>
+                  <span class="macos-menu-item">View</span>
+                  <span class="macos-menu-item">Go</span>
+                </div>
+                <div class="macos-menubar-right">
+                  <span class="macos-status-item macos-time">14:53</span>
+                </div>
+              </div>
+            </div>
+            <div class="gather-slogan" data-gather-slogan>
+              <h2>From chaos to clarity — in one scroll.</h2>
+              <p>Stark does exactly this, locally on your Mac.</p>
+            </div>
+          </div>
+          <div class="gather-spacer" aria-hidden="true"></div>
         </div>
       </div>
     </section>
@@ -151,7 +181,7 @@
 
         <div class="video-frame reveal">
           <video controls playsinline preload="metadata" poster="assets/organize.png">
-            <source src="assets/Screen%20Recording%202026-05-28%20at%2000.29.26.mov" type="video/quicktime">
+            <source src="assets/Screen%20Recording%202026-05-28%20at%2000.29.26.mov" type="video/mp4">
             Your browser does not support this video.
           </video>
         </div>
