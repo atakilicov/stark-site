@@ -3,358 +3,232 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Messy Mac? Stark is your AI-powered offline file organizer. Type a command, Stark cleans everything locally. Zero cloud, zero deleted files.">
+  <meta name="description" content="Stark - Smart Folder Organizer for macOS. Organize files by topic, type, or date, create folder rules, and explore disk space locally on your Mac.">
+  <meta property="og:title" content="Stark - Smart Folder Organizer">
+  <meta property="og:description" content="One-click file organization, folder rules, and disk exploration for macOS.">
+  <meta property="og:image" content="assets/organize.png">
+  <meta name="theme-color" content="#111316">
   <title>Stark - Smart Folder Organizer</title>
   <link rel="icon" type="image/png" href="assets/stark-icon.png">
-  <link rel="preload" as="image" href="assets/stark-icon.png">
+  <link rel="preload" as="image" href="assets/organize.png">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="nav-shell">
-      <a class="brand" href="#top" aria-label="Stark home">
-        <img src="assets/stark-icon.png" alt="" width="28" height="28">
-        <span>Stark</span>
-      </a>
+  <header class="site-header" data-header>
+    <a class="brand" href="#top" aria-label="Stark home">
+      <img src="assets/stark-icon.png" alt="" width="28" height="28">
+      <span>Stark</span>
+    </a>
 
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-        <span></span>
-        <span></span>
-      </button>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation">
+      <span></span>
+      <span></span>
+    </button>
 
-      <nav class="site-nav" id="site-nav" aria-label="Primary">
-        <a href="#ai">Ask AI</a>
-        <a href="#safety">Safety</a>
-        <a href="#features">Features</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#faq">FAQ</a>
-        <a class="nav-cta" href="#pricing">Get Stark Pro</a>
-      </nav>
-    </div>
+    <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+      <a href="#organize">Organize</a>
+      <a href="#rules">Rules</a>
+      <a href="#disk">Disk</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#demo">Demo</a>
+      <a class="nav-cta" href="https://apps.apple.com/tr/app/stark-smart-folder-organizer/id6761735079?mt=12" target="_blank" rel="noreferrer">Mac App Store</a>
+    </nav>
   </header>
 
   <main id="top">
-    <!-- ═══ HERO + FILE ANIMATION ═══ -->
-    <section class="section hero-section theme-dark">
-      <div class="hero-glow-layer" aria-hidden="true">
-        <span class="hero-orb hero-orb-1"></span>
-        <span class="hero-orb hero-orb-2"></span>
-        <span class="hero-orb hero-orb-3"></span>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-media" aria-hidden="true">
+        <img src="assets/organize.png" alt="">
       </div>
-      <div class="section-shell hero-shell">
-        <div class="hero-copy reveal">
-          <p class="eyebrow">Stark for macOS</p>
-          <h1><span class="hero-h1-accent">Messy Mac?</span><br>Clean it with a click.</h1>
-          <p class="hero-subtitle">
-            Tell Stark what you want. It organizes your files locally — no cloud, no deleted files, no drama.
-          </p>
-          <div class="hero-actions">
-            <a class="button button-outline-light" href="#pricing">Download Free</a>
-            <a class="button button-primary" href="#pricing">Get Pro</a>
+      <div class="hero-shade" aria-hidden="true"></div>
+
+      <div class="hero-inner">
+        <p class="eyebrow">For macOS</p>
+        <h1 id="hero-title">Stark - Smart Folder Organizer</h1>
+        <p class="hero-copy">One click organizes a folder by Topic, Type, or Date. Rules keep the next mess away. Disk view shows what is eating your space.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="https://apps.apple.com/tr/app/stark-smart-folder-organizer/id6761735079?mt=12" target="_blank" rel="noreferrer">View on Mac App Store</a>
+          <a class="button button-secondary" href="#demo">Watch the workflow</a>
+        </div>
+        <div class="hero-modes" aria-label="Organization modes">
+          <span>Topic</span>
+          <span>Type</span>
+          <span>Date</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro-strip" aria-label="Product highlights">
+      <div class="intro-item reveal">
+        <span class="intro-number">01</span>
+        <strong>Organize</strong>
+        <p>Turn a crowded folder into clean groups with one approval.</p>
+      </div>
+      <div class="intro-item reveal">
+        <span class="intro-number">02</span>
+        <strong>Automate</strong>
+        <p>Build simple rules like Desktop PNGs go to Pictures.</p>
+      </div>
+      <div class="intro-item reveal">
+        <span class="intro-number">03</span>
+        <strong>Explore</strong>
+        <p>Find large files, cache, empty folders, and wasted space.</p>
+      </div>
+    </section>
+
+    <section class="section feature-section" id="organize">
+      <div class="section-shell feature-shell">
+        <div class="feature-copy reveal">
+          <p class="eyebrow dark">Main feature</p>
+          <h2>Pick the logic. Stark builds the folders.</h2>
+          <p>Choose Topic, Type, or Date and Stark proposes a full move plan before anything changes. Accept all, reject a few, or undo the whole session later.</p>
+
+          <div class="mode-switcher" role="tablist" aria-label="Organization examples">
+            <button class="mode-button is-active" type="button" role="tab" aria-selected="true" data-mode="Topic">Topic</button>
+            <button class="mode-button" type="button" role="tab" aria-selected="false" data-mode="Type">Type</button>
+            <button class="mode-button" type="button" role="tab" aria-selected="false" data-mode="Date">Date</button>
           </div>
-          <ul class="metric-strip" aria-label="Key product metrics">
-            <li><strong>100%</strong><span>Offline, always</span></li>
-            <li><strong>0</strong><span>Files ever deleted</span></li>
-            <li><strong>10,000+</strong><span>Files in under 2 sec</span></li>
-            <li><strong>Full Undo</strong><span>Every move reversible</span></li>
-          </ul>
+          <p class="mode-result" data-mode-result>Invoices, photos, videos, docs, and projects land in folders that match what they are about.</p>
         </div>
 
-        <!-- Scroll-driven file gather animation -->
-        <div class="gather-scroll" id="gather-scroll">
-          <div class="gather-sticky">
-            <p class="scroll-hint" data-scroll-hint>You ask. Stark acts. — Scroll to watch</p>
-            <div class="gather-stage" id="gather-stage" aria-hidden="true">
-              <!-- macOS menu bar -->
-              <div class="macos-menubar">
-                <div class="macos-menubar-left">
-                  <span class="macos-apple">&#63743;</span>
-                  <span class="macos-menu-item is-bold">Finder</span>
-                  <span class="macos-menu-item">File</span>
-                  <span class="macos-menu-item">Edit</span>
-                  <span class="macos-menu-item">View</span>
-                  <span class="macos-menu-item">Go</span>
-                </div>
-                <div class="macos-menubar-right">
-                  <span class="macos-status-item macos-time">14:53</span>
-                </div>
-              </div>
-            </div>
-            <div class="gather-slogan" data-gather-slogan>
-              <h2>From chaos to clarity — in one scroll.</h2>
-              <p>Stark does exactly this, locally on your Mac.</p>
-            </div>
-          </div>
-          <div class="gather-spacer" aria-hidden="true"></div>
-        </div>
+        <figure class="product-shot reveal" data-tilt data-parallax>
+          <img src="assets/organize.png" alt="Stark organizing files into proposals by type in the macOS app.">
+          <figcaption>Organization proposals stay visible before you apply the move.</figcaption>
+        </figure>
       </div>
     </section>
 
-    <!-- ═══ SCREENSHOTS ═══ -->
-    <section class="section section-light" id="screenshots">
-      <div class="section-shell">
-        <div class="section-copy centered reveal">
-          <p class="eyebrow eyebrow-dark">Interface</p>
-          <h2>See Stark in action.</h2>
-        </div>
-        <div class="screenshot-gallery reveal">
-          <div class="screenshot-slot">
-            <div class="screenshot-placeholder">Screenshot 1</div>
-            <p class="screenshot-caption">Main workspace — file list with AI panel</p>
-          </div>
-          <div class="screenshot-slot">
-            <div class="screenshot-placeholder">Screenshot 2</div>
-            <p class="screenshot-caption">Organization proposals with reasoning</p>
-          </div>
-          <div class="screenshot-slot">
-            <div class="screenshot-placeholder">Screenshot 3</div>
-            <p class="screenshot-caption">Disk analyzer and rules engine</p>
+    <section class="section feature-section section-ink" id="rules">
+      <div class="section-shell feature-shell reverse">
+        <figure class="product-shot reveal" data-tilt data-parallax>
+          <img src="assets/rule.png" alt="Stark rules builder with watch folder, conditions, and actions.">
+          <figcaption>Rules are built as readable steps, then saved for the folder.</figcaption>
+        </figure>
+
+        <div class="feature-copy reveal">
+          <p class="eyebrow">Rules</p>
+          <h2>Make tiny automations for the boring stuff.</h2>
+          <p>Watch a folder, match a condition, run an action. A screenshot hits Desktop, a PNG rule moves it before the clutter has time to settle.</p>
+
+          <div class="rule-recipe" aria-label="Example automation rule">
+            <span>When</span>
+            <strong>Desktop receives PNG</strong>
+            <span>move to</span>
+            <strong>Pictures</strong>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ═══ ASK AI ═══ -->
-    <section class="section section-light" id="ai">
-      <div class="section-shell split-layout">
-        <div class="section-copy reveal">
-          <p class="eyebrow eyebrow-dark">Ask AI</p>
-          <h2>Talk to your files.</h2>
-          <p>Type what you want. Stark figures out the rest.</p>
+    <section class="section feature-section" id="disk">
+      <div class="section-shell feature-shell">
+        <div class="feature-copy reveal">
+          <p class="eyebrow dark">Disk</p>
+          <h2>See where your storage actually went.</h2>
+          <p>Stark's disk view surfaces large files, old files, cache, zero-byte files, and empty folders so cleanup starts with evidence instead of guessing.</p>
+
+          <div class="space-list" aria-label="Disk categories">
+            <span><b>Large Files</b> 14.98 GB</span>
+            <span><b>Old Files</b> 10.05 GB</span>
+            <span><b>Cache</b> 1.14 GB</span>
+          </div>
         </div>
-        <div class="stack-layout reveal">
-          <article class="stack-card stack-card-light">
-            <p class="card-kicker">Understand</p>
-            <h3>It gets what you mean</h3>
-            <p>Type however you like — Stark figures out the intent and builds the right structure for your files.</p>
-          </article>
-          <article class="stack-card stack-card-dark">
-            <p class="card-kicker">Preview</p>
-            <h3>See the plan before it runs</h3>
-            <p>Stark shows every move it wants to make. Approve all, reject some, or cancel. You're always in control.</p>
-          </article>
-          <article class="stack-card stack-card-light">
-            <p class="card-kicker">Undo</p>
-            <h3>Changed your mind? One tap back</h3>
-            <p>Every session is logged. Reverse a single batch or roll back multiple sessions instantly.</p>
-          </article>
+
+        <figure class="product-shot reveal" data-tilt data-parallax>
+          <img src="assets/explore.png" alt="Stark disk explorer showing category breakdown, folder growth, and space suggestions.">
+          <figcaption>DaisyDisk-like discovery, tuned for quick decisions inside Stark.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section demo-section" id="demo">
+      <div class="section-shell demo-shell">
+        <div class="section-heading reveal">
+          <p class="eyebrow dark">Workflow</p>
+          <h2>Watch Stark clean a real folder.</h2>
+          <p>The product video shows the flow from selecting a folder to reviewing proposals and applying the result.</p>
+        </div>
+
+        <div class="video-frame reveal">
+          <video controls playsinline preload="metadata" poster="assets/organize.png">
+            <source src="assets/Screen%20Recording%202026-05-28%20at%2000.29.26.mov" type="video/quicktime">
+            Your browser does not support this video.
+          </video>
         </div>
       </div>
     </section>
 
-    <!-- ═══ SAFETY ═══ -->
-    <section class="section section-dark" id="safety">
-      <div class="section-shell">
-        <div class="section-copy centered reveal">
-          <p class="eyebrow">Private by design</p>
-          <h2>Engineered for Paranoia.</h2>
-        </div>
-        <div class="safety-grid">
-          <article class="safety-card reveal">
-            <span class="safety-icon">&#9729;</span>
-            <span class="safety-index">01</span>
-            <h3>100% Offline</h3>
-            <p>What happens on your Mac, stays on your Mac. No account, no cloud, no exceptions.</p>
-          </article>
-          <article class="safety-card reveal">
-            <span class="safety-icon">&#8635;</span>
-            <span class="safety-index">02</span>
-            <h3>Never Deletes</h3>
-            <p>Stark only moves files. Plus, a full Undo button is always there to bring everything back.</p>
-          </article>
-          <article class="safety-card reveal">
-            <span class="safety-icon">&#128274;</span>
-            <span class="safety-index">03</span>
-            <h3>You Stay in Control</h3>
-            <p>Stark only touches folders you explicitly approve. Nothing runs without your permission.</p>
-          </article>
-          <article class="safety-card reveal">
-            <span class="safety-icon">&#128187;</span>
-            <span class="safety-index">04</span>
-            <h3>Developer Friendly</h3>
-            <p><code>.git</code>, <code>node_modules</code>, <code>Pods</code>, and <code>.xcodeproj</code> are automatically protected.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══ FEATURES ═══ -->
-    <section class="section section-light" id="features">
-      <div class="section-shell">
-        <div class="section-copy reveal">
-          <p class="eyebrow eyebrow-dark">Core features</p>
-          <h2>Everything you need. Nothing you don't.</h2>
-        </div>
-        <div class="feature-grid">
-          <article class="feature-card reveal">
-            <p class="card-kicker">Rules Engine</p>
-            <h3>Automate repetitive cleanup</h3>
-            <p>Trigger-based rules route screenshots, PDFs, videos, and AI-detected documents into the right folders — on autopilot.</p>
-          </article>
-          <article class="feature-card reveal">
-            <p class="card-kicker">Disk Analyzer</p>
-            <h3>See what is consuming space</h3>
-            <p>Visual category breakdown. Find old files, duplicates, empty folders, and heavy archives in seconds.</p>
-          </article>
-          <article class="feature-card reveal">
-            <p class="card-kicker">File Browser</p>
-            <h3>Navigate large trees fast</h3>
-            <p>Lazy-loaded folder trees, recent locations, quick system folders, and real-time search across every view mode.</p>
-          </article>
-          <article class="feature-card reveal">
-            <p class="card-kicker">Preview &amp; Approval</p>
-            <h3>See every move before it happens</h3>
-            <p>Full source → destination preview before anything runs. Approve all, reject some, or cancel completely.</p>
-          </article>
-          <article class="feature-card reveal">
-            <p class="card-kicker">History</p>
-            <h3>Rollback any session instantly</h3>
-            <p>Every batch is logged. Undo a single operation or roll back to any point in your history timeline.</p>
-          </article>
-          <article class="feature-card reveal">
-            <p class="card-kicker">Menu Bar</p>
-            <h3>Always one click away</h3>
-            <p>Open Stark, inspect a folder, and jump straight into organizing — directly from your Mac menu bar.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══ AUDIENCE ═══ -->
-    <section class="section section-dark">
-      <div class="section-shell">
-        <div class="section-copy centered reveal">
-          <p class="eyebrow">Who uses Stark</p>
-          <h2>Built for every kind of mess.</h2>
-        </div>
-        <div class="audience-grid">
-          <article class="audience-card reveal">
-            <div class="audience-avatar audience-avatar-dev">
-              <span>👨‍💻</span>
-            </div>
-            <div class="audience-body">
-              <h3>Developers</h3>
-              <p>Keep project folders intact while routing loose exports, assets, logs, and stray downloads into order. <code>.git</code> stays safe.</p>
-            </div>
-          </article>
-          <article class="audience-card reveal">
-            <div class="audience-avatar audience-avatar-creator">
-              <span>🎬</span>
-            </div>
-            <div class="audience-body">
-              <h3>Creators</h3>
-              <p>Sort footage, image sets, renders, and reference files by type, date, project, or client — in one command.</p>
-            </div>
-          </article>
-          <article class="audience-card reveal">
-            <div class="audience-avatar audience-avatar-finance">
-              <span>📑</span>
-            </div>
-            <div class="audience-body">
-              <h3>Finance &amp; Legal</h3>
-              <p>Separate invoices, statements, and contracts automatically. Every move is logged and reversible.</p>
-            </div>
-          </article>
-          <article class="audience-card reveal">
-            <div class="audience-avatar audience-avatar-daily">
-              <span>🙂</span>
-            </div>
-            <div class="audience-body">
-              <h3>Daily Mac Users</h3>
-              <p>Clean Desktop and Downloads in seconds with simple prompts. No learning curve, no risk.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══ PRICING ═══ -->
-    <section class="section section-light" id="pricing">
+    <section class="section pricing-section" id="pricing">
       <div class="section-shell pricing-shell">
-        <div class="section-copy reveal">
-          <p class="eyebrow eyebrow-dark">Pricing</p>
-          <h2>No Subscriptions. No Cloud. Buy Once, Keep Forever.</h2>
-          <p>Try it free on real folders. When you're ready to go unlimited, pay once — and that's it. No renewals, no accounts.</p>
-        </div>
-        <div class="pricing-grid">
-          <article class="price-card reveal">
-            <p class="plan-name">Free</p>
-            <p class="plan-price">$0</p>
-            <p class="plan-copy">A real trial — no time limit, no account. Organize up to 30 files to see exactly how Stark works.</p>
-            <ul class="plan-list">
-              <li>Organize up to 30 files total</li>
-              <li>1 automation rule</li>
-              <li>AI command mode</li>
-              <li>Disk analyzer</li>
-              <li>Full undo history</li>
-              <li>File browser</li>
-            </ul>
-            <a class="button button-outline-dark" href="#faq">Learn more</a>
-          </article>
-          <article class="price-card price-card-featured reveal">
-            <p class="plan-name">Stark Pro</p>
-            <p class="plan-price">$14.99</p>
-            <p class="plan-copy">One-time purchase. No subscription. No account. Own it forever.</p>
-            <ul class="plan-list">
-              <li>Unlimited file organization</li>
-              <li>Unlimited automation rules</li>
-              <li>Rule duplication</li>
-              <li>Smart Collections</li>
-              <li>Full AI pipeline</li>
-              <li>Everything in Free</li>
-            </ul>
-            <a class="button button-primary" href="#top">Get Stark Pro</a>
-          </article>
+        <div class="section-heading reveal" data-reveal>
+          <p class="eyebrow dark">Pricing</p>
+          <h2 data-split>One price. Yours forever.</h2>
+          <p>Start free and organize as you go. Unlock everything once - no subscription, no renewal, no account.</p>
         </div>
 
-        <details class="tech-details reveal">
-          <summary>See technical details</summary>
-          <table class="tech-table">
-            <tbody>
-              <tr><td>Platform</td><td>macOS 26.0+</td></tr>
-              <tr><td>Framework</td><td>SwiftUI · Swift 6 · MVVM-C</td></tr>
-              <tr><td>AI / ML</td><td>Apple Foundation Models · CoreML · NaturalLanguage</td></tr>
-              <tr><td>Network access</td><td>None — 100% offline</td></tr>
-              <tr><td>Account required</td><td>No</td></tr>
-              <tr><td>Performance</td><td>10,000+ files scanned in under 2 seconds</td></tr>
-              <tr><td>Sandbox</td><td>App Store sandboxed · app-scoped bookmarks</td></tr>
-              <tr><td>Data storage</td><td>Local only · JSON + UserDefaults</td></tr>
-            </tbody>
-          </table>
-        </details>
+        <div class="plan-grid">
+          <article class="plan-card reveal" data-reveal>
+            <header class="plan-head">
+              <span class="plan-name">Free</span>
+              <div class="plan-price">
+                <span class="plan-amount">$0</span>
+                <span class="plan-term">to try it out</span>
+              </div>
+            </header>
+            <ul class="plan-list">
+              <li><span class="plan-tick" aria-hidden="true"></span>Up to <b>30 files</b> per organize session</li>
+              <li><span class="plan-tick" aria-hidden="true"></span><b>1</b> active folder rule</li>
+              <li><span class="plan-tick" aria-hidden="true"></span>Basic disk analysis</li>
+              <li class="plan-off"><span class="plan-tick" aria-hidden="true"></span>Unlimited organizing</li>
+              <li class="plan-off"><span class="plan-tick" aria-hidden="true"></span>Unlimited rules</li>
+            </ul>
+            <a class="button button-secondary plan-cta" href="https://apps.apple.com/tr/app/stark-smart-folder-organizer/id6761735079?mt=12" target="_blank" rel="noreferrer">Download free</a>
+          </article>
+
+          <article class="plan-card plan-card-pro reveal" data-reveal>
+            <span class="plan-flag">Lifetime</span>
+            <header class="plan-head">
+              <span class="plan-name">Pro</span>
+              <div class="plan-price">
+                <span class="plan-amount">$14.99</span>
+                <span class="plan-term">one-time, forever</span>
+              </div>
+            </header>
+            <ul class="plan-list">
+              <li><span class="plan-tick" aria-hidden="true"></span><b>Unlimited</b> file organizing</li>
+              <li><span class="plan-tick" aria-hidden="true"></span><b>Unlimited</b> folder rules</li>
+              <li><span class="plan-tick" aria-hidden="true"></span><b>Unlimited</b> disk analysis</li>
+              <li><span class="plan-tick" aria-hidden="true"></span>Every future update included</li>
+              <li><span class="plan-tick" aria-hidden="true"></span>Pay once - no subscription</li>
+            </ul>
+            <a class="button button-primary plan-cta" href="https://apps.apple.com/tr/app/stark-smart-folder-organizer/id6761735079?mt=12" target="_blank" rel="noreferrer">Unlock Pro - $14.99</a>
+          </article>
+        </div>
       </div>
     </section>
 
-    <!-- ═══ FAQ ═══ -->
-    <section class="section section-dark" id="faq">
-      <div class="section-shell faq-shell">
-        <div class="section-copy centered reveal">
-          <p class="eyebrow">FAQ</p>
-          <h2>Short answers for the obvious questions.</h2>
-        </div>
-        <div class="faq-list">
-          <details class="faq-item reveal"><summary>Will it accidentally delete or overwrite something?</summary><p>Never. Stark has a zero-deletion policy — it only moves files. Every single move is logged with source and destination, so you can reverse anything with one click.</p></details>
-          <details class="faq-item reveal"><summary>Does my data leave my Mac?</summary><p>No. There's no server, no cloud sync, no account. Everything runs locally using on-device AI. Your files never leave your machine.</p></details>
-          <details class="faq-item reveal"><summary>What happens to my Git repos and Xcode projects?</summary><p>They're automatically protected. Stark detects <code>.git</code>, <code>node_modules</code>, <code>Pods</code>, <code>.xcodeproj</code>, <code>Cargo.toml</code> and other project markers, and excludes those folders from any operation.</p></details>
-          <details class="faq-item reveal"><summary>Can I undo an entire session?</summary><p>Yes. Stark logs every batch as a separate session in the History view. You can undo a single session or roll back multiple sessions at once with "Undo to Here".</p></details>
-          <details class="faq-item reveal"><summary>Is the $14.99 really a one-time price?</summary><p>Yes. Pay once through the Mac App Store and own Stark Pro forever. No renewals, no hidden fees, no subscription.</p></details>
-          <details class="faq-item reveal"><summary>Does it work on older macOS versions?</summary><p>Stark requires macOS 26.0 or later. The full AI pipeline uses Apple Foundation Models which is available on macOS 26+.</p></details>
-        </div>
-        <div class="closing-card reveal">
+    <section class="section trust-section">
+      <div class="section-shell trust-shell">
+        <div class="trust-copy reveal">
           <img src="assets/stark-icon.png" alt="" width="64" height="64">
-          <h2>Clean your Mac. Keep your privacy.</h2>
-          <p>Type what you want. Stark handles the rest — locally, safely, and with a full undo if you change your mind.</p>
-          <div class="appstore-badge reveal">
-            <div class="appstore-inner">
-              <div class="appstore-logo">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-              </div>
-              <div class="appstore-text">
-                <span class="appstore-sub">Download on the</span>
-                <span class="appstore-title">Mac App Store</span>
-              </div>
-            </div>
-            <span class="appstore-price">Free · Pro $14.99</span>
+          <p class="eyebrow dark">Mac App Store</p>
+          <h2>Built for folders you actually care about.</h2>
+          <p>No cloud account, no background mystery, no blind cleanup. Stark shows the plan, applies only what you approve, and keeps history for undo.</p>
+          <a class="button button-primary" href="https://apps.apple.com/tr/app/stark-smart-folder-organizer/id6761735079?mt=12" target="_blank" rel="noreferrer">Get Stark - Smart Folder Organizer</a>
+        </div>
+
+        <div class="trust-points reveal" aria-label="Stark safeguards">
+          <div>
+            <span>Local first</span>
+            <strong>Your files stay on your Mac.</strong>
+          </div>
+          <div>
+            <span>Preview first</span>
+            <strong>Every move is visible before Apply.</strong>
+          </div>
+          <div>
+            <span>Undo ready</span>
+            <strong>Each session can be reversed.</strong>
           </div>
         </div>
       </div>
@@ -364,14 +238,14 @@
   <footer class="site-footer">
     <div class="footer-shell">
       <div>
-        <p style="margin:0 0 4px; font-weight:500; color: var(--color-gray-900);">Stark</p>
-        <p style="margin:0;">Smart Folder Organizer for macOS</p>
+        <strong>Stark</strong>
+        <span>Smart Folder Organizer for macOS</span>
       </div>
-      <div style="display:flex; gap: 20px; align-items:center; flex-wrap:wrap;">
-        <a href="privacy.html" style="color: var(--color-black-soft);">Privacy Policy</a>
-        <a href="support.html" style="color: var(--color-black-soft);">Support</a>
-        <a href="mailto:ata@kilicov.dev" style="color: var(--color-black-soft);">Contact</a>
-      </div>
+      <nav aria-label="Footer links">
+        <a href="privacy.html">Privacy</a>
+        <a href="support.html">Support</a>
+        <a href="mailto:ata@kilicov.dev">Contact</a>
+      </nav>
     </div>
   </footer>
 
